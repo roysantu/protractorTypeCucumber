@@ -1,7 +1,7 @@
 {
   "name": "protractortypecucumber",
   "version": "1.0.0",
-  "description": "Sample protractor cucumeber framework using typescript",
+  "description": "Sample protractor cucumber framework using typescript",
   "main": "index.js",
   "scripts": {
     "pretest": "tsc",
