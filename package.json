@@ -1,0 +1,27 @@
+{
+  "name": "protractortypecucumber",
+  "version": "1.0.0",
+  "description": "Sample protractor cucumeber framework using typescript",
+  "main": "index.js",
+  "scripts": {
+    "pretest": "tsc",
+    "protractor": "./node_modules/protractor/build/cli.js",
+    "webdriver-update": "./node_modules/.bin/webdriver-manager update",
+    "test": "protractor conf.js",
+    "e2e": "tsc && protractor conf.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/jasmine": "^2.8.4",
+    "@types/jasminewd2": "^2.0.0",
+    "jasmine": "^2.4.1",
+    "protractor": "^7.0.0",
+    "typescript": "^2.8.0"
+  },
+  "devDependencies": {
+    "@types/jasminewd2": "^2.0.0",
+    "ts-node": "^3.0.2",
+    "@types/node": "^14.0.14"
+  }
+}
