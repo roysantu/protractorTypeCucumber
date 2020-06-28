@@ -11,4 +11,4 @@ Scenario: Verify Calculator Add Functionality
 
 Given Navigate to Calculator
 When Add two numbers "3" and "5"
-Then The Output should displaye as "8"
+Then The Output should displaye as "9"
