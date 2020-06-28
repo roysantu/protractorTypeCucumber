@@ -1,8 +1,11 @@
 import { Given, When, Then } from "cucumber";
 import { calculatorPage } from "../pageObjects/calculatorPage";
 import { browser } from "protractor";
+import chai from "chai";
 
+var expect = chai.expect;
 let calc = new calculatorPage();
+
 
 Given('Navigate to Calculator', async () => {
     // Write code here that turns the phrase above into concrete actions
@@ -21,6 +24,6 @@ Given('Navigate to Calculator', async () => {
   Then('The Output should displaye as {string}', async (string) => {
     // Write code here that turns the phrase above into concrete actions
     await calc.result.getText().then( (newResult) => {
-        console.log(newResult);
+        expect(newResult).to.equal(string);
     })
   });

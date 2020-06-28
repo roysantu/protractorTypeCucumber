@@ -1,4 +1,6 @@
 import {Config} from 'protractor';
+// import * as reporter from 'cucumber-html-reporter';
+var reporter = require('cucumber-html-reporter');
 
 export let config: Config = {
     // custom for cucumber
@@ -18,6 +20,27 @@ export let config: Config = {
   specs: [ './features/demo.feature' ],
   cucumberOpts: {
     // require step definitions
+    format:"json:./Report/cucumber_report.json",
+    onComplete: () => {
+        var options = {
+            theme: 'bootstrap',
+            jsonFile: './Report/cucumber_report.json',
+            output: 'test/report/cucumber_report.html',
+            reportSuiteAsScenarios: true,
+            scenarioTimestamp: true,
+            launchReport: true,
+            metadata: {
+                "App Version":"0.3.2",
+                "Test Environment": "STAGING",
+                "Browser": "Chrome  83.0.4103.116",
+                "Platform": "Windows 10",
+                "Parallel": "Scenarios",
+                "Executed": "Remote"
+            }
+        };
+     
+        reporter.generate(options);
+    },
     require: [
       './stepDefinitions/*.js' // accepts a glob
     ]
