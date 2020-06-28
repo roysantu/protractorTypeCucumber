@@ -4,4 +4,4 @@
 node_modules
 tmp
 !asyncAwait/*.js
-Report/*.*
+Report/*.json
